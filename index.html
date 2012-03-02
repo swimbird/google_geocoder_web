@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <title>address to GeoRSS for advine</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="">
+    <meta name="author" content="">
+
+    <!-- Le styles -->
+    <link href="./css/bootstrap.css" rel="stylesheet">
+    <style type="text/css">
+      body {
+        padding-top: 60px;
+        padding-bottom: 40px;
+      }
+    </style>
+    <link href="./css/bootstrap-responsive.css" rel="stylesheet">
+
+    <link href="./css/dropbox.css" rel="stylesheet">
+  </head>
+
+  <body>
+
+    <div class="navbar navbar-fixed-top">
+      <div class="navbar-inner">
+        <div class="container">
+          <a class="btn btn-navbar" data-toggle="collapse" data-target=".nav-collapse">
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+          </a>
+          <a class="brand" href="#">address to GeoRSS for advine (beta)</a>
+        </div>
+      </div>
+    </div>
+
+    <div class="container">
+
+      <!-- Main hero unit for a primary marketing message or call to action -->
+      <!--
+      <div class="hero-unit">
+        <h2>Drag and Drop the file</h2>
+        <p>file example</p>
+      </div>
+      -->
+      <div id="dropbox">
+        <span class="message"><i>ここにstep1のファイルをドラッグアンドドロップしてね。</i></span>
+      </div>
+
+      <!-- Example row of columns -->
+      <div class="row">
+        <div class="span4">
+          <h2>step1</h2>
+           <p>以下のようなtitle, description のcsv形式のファイルを用意する</p>
+           <p>例: address.txt</p>
+           <p>
+           東京都 東京駅,日本の中心都市。冬のライトアップは素敵<br>
+           東京都 二重橋前,皇居に近い駅。ランナー御用達？<br>
+           東京都 銀座,大人の街。それが銀座</p>
+        </div>
+        <div class="span4">
+          <h2>step2</h2>
+           <p>ファイルをアップロード!!</p>
+        </div>
+        <div class="span4">
+          <h2>step3</h2>
+           <p>ファイルをダウンロード!!</p>
+        </div>
+      </div>
+      <hr>
+
+      <footer>
+      </footer>
+
+    </div> <!-- /container -->
+
+  <script src="http://code.jquery.com/jquery-1.6.3.min.js"></script>
+  <script src="./js/jquery.filedrop.js"></script>
+  <script src="./js/script.js"></script>
+
+
+  <iframe id="download_iframe" src="" style="visibility:hidden"></iframe>
+  </body>
+</html>

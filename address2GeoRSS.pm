@@ -67,12 +67,14 @@ sub new{
   my $GeoXMLItems;
   while (my $address = <$fh>) {
     chomp $address;
+    $address =~ s///;
     my @addressList = split /,/, $address;
-    my $json_res = GeoCall($addressList[0]);
+    my $json_res = GeoCall($addressList[1]);
 
     if($debug){
       print STDERR $addressList[0], "\n";
       print STDERR $addressList[1], "\n";
+      print STDERR $addressList[2], "\n";
       print STDERR $json_res->{status}, "\n";
       print STDERR $json_res->{results}[0]->{formatted_address}, "\n";
       print STDERR $json_res->{results}[0]->{geometry}->{location}->{lat}, "\n";
@@ -88,7 +90,7 @@ sub new{
               $addressList[0]
             </title>
             <description>
-              <![CDATA[$addressList[1]]]>
+              <![CDATA[$addressList[2]]]>
             </description>
             <geo:lat>
                 $json_res->{results}[0]->{geometry}->{location}->{lat}
@@ -111,7 +113,7 @@ EOS
   }
 
   my $GeoXML = $GeoXMLHeader . $GeoXMLItems . $GeoXMLFooter;
-  my @extlist = ('.txt');
+  my @extlist = ('.txt', '.csv');
   my $out_file = basename($file, @extlist)."_GeoRSS.xml";
   $out_file = './tmp/'.$out_file;
   open( my $out_fh, ">", $out_file ) or die "Cannot open $out_file for write: $!";
